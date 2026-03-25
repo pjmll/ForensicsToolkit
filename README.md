@@ -17,7 +17,7 @@
 
 - **[src/main.py](src/main.py)**: **取证控制中心**。负责命令行参数解析、全局日志管理以及各取证模块的调度分发。
 - **[src/forensics.py](src/forensics.py)**: **取证分析核心引擎**。负责对原始数据进行清洗，执行域名权重统计、搜索关键词提取等核心分析算法。
-- **[src/database.py](src/database.py)**: **Chromium 引擎驱动**。专用处理Chrome浏览器的数据库连接、Windows Epoch时戳解析及Shadow Copy逻辑。
+- **[src/database.py](src/chrome_database.py)**: **Chromium 引擎驱动**。专用处理Chrome浏览器的数据库连接、Windows Epoch时戳解析及Shadow Copy逻辑。
 - **[src/firefox_database.py](src/firefox_database.py)**: **Gecko 引擎驱动**。专门针对Firefox的 `places.sqlite` 数据库进行深度解析与数据提取。
 - **[src/exporter.py](src/exporter.py)**: **取证报告生成器**。支持多格式导出，内置HTML模板引擎用于生成可视化的取证统计图表。
 - **[src/save_open_tabs_android.py](src/save_open_tabs_android.py)**: **移动端扩展工具**。通过ADB与Chrome DevTools协议，实时获取Android手机上当前打开的所有浏览器标签页URL。
