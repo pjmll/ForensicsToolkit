@@ -1,0 +1,7 @@
+tabulate>=0.8.10,<0.9.0
+requests==2.31.0
+tqdm==4.66.1
+git+https://github.com/szilard-nemeth/python-commons.git
+
+# python-commons transitive dependencies
+humanize==4.9.0
