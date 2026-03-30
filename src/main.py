@@ -85,11 +85,16 @@ class ForensicsApp:
         print(BANNER_TEXT)
         LOG.info(f"版本: {VERSION} 启动")
 
-        target_browsers = self.args.browser.lower().split(',')
+        # 预存处理后的目标列表
+        target_raw = self.args.browser.lower()
+        if target_raw in ['both', 'all', '3']:
+            target_browsers = ['chrome', 'firefox']
+        else:
+            target_browsers = target_raw.split(',')
         
         found_any = False
         for b_id, meta in BROWSER_META.items():
-            if 'all' in target_browsers or b_id.lower() in target_browsers:
+            if b_id.lower() in target_browsers:
                 self._process_browser(b_id, meta)
                 found_any = True
         
